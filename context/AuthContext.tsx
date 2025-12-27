@@ -4,8 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 
-const API_BASE_URL = 'https://sih-backend-1-hiow.onrender.com/api';
-const WS_URL = 'wss://sih-backend-1-hiow.onrender.com';
+const API_BASE_URL = 'https://sih-backend-eczh.onrender.com/api';
+const WS_URL = 'wss://sih-backend-eczh.onrender.com.com';
 
 interface User {
   id: string;
