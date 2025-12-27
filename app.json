@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ocean",
+    "name": "ocean sentinal",
     "slug": "ocean",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -44,6 +44,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f999250d-e427-4d78-9bc8-b88c860a66f0"
+      }
+    },
+    "owner": "prakhar362"
   }
 }
