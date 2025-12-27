@@ -2,17 +2,17 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Location from 'expo-location';
 import React, { useEffect, useRef, useState } from 'react';
 import {
-    ActivityIndicator,
-    Alert,
-    Dimensions,
-    Modal,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  ActivityIndicator,
+  Alert,
+  Dimensions,
+  Modal,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from 'react-native';
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Marker, PROVIDER_DEFAULT, UrlTile } from 'react-native-maps';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from '../../context/AuthContext';
 import { useLocation } from '../../context/LocationContext';
@@ -190,11 +190,18 @@ export default function MapScreen() {
           <MapView
             ref={mapRef}
             style={styles.map}
-            provider={PROVIDER_GOOGLE}
-            initialRegion={userLocation || defaultLocation}
+            provider={PROVIDER_DEFAULT}  
+            initialRegion={defaultLocation}
             showsUserLocation={true}
             showsMyLocationButton={false}
           >
+          {/* OpenStreetMap tiles */}
+  <UrlTile
+  urlTemplate="http://c.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          maximumZ={19}
+          shouldReplaceMapContent={true}
+/>
+
             {DUMMY_HAZARDS.map(hazard => (
               <Marker
                 key={hazard.id}
