@@ -5,7 +5,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 
 const API_BASE_URL = 'https://sih-backend-eczh.onrender.com/api';
-const WS_URL = 'wss://sih-backend-eczh.onrender.com.com';
+const WS_URL = 'wss://sih-backend-eczh.onrender.com';
 
 interface User {
   id: string;
