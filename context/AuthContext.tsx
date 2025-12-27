@@ -162,8 +162,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
 
       const data = await response.json();
+      console.log('Login response data:', data);
 
-      if (data.success) {
+      if (data !=null) {
+        console.log('Login successful, storing data');
         await AsyncStorage.setItem('token', data.token);
         await AsyncStorage.setItem('user', JSON.stringify(data.user));
         await AsyncStorage.setItem('userId', data.user.id);
@@ -198,6 +200,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
 
       const data = await response.json();
+      console.log('Registration response data:', data);
 
       if (data.success) {
         await AsyncStorage.setItem('token', data.token);
